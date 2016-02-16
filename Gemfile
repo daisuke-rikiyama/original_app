@@ -24,7 +24,27 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+# bootstrap
+gem 'bootstrap-sass'
+# annotate
+gem 'annotate'
+# faker
+gem 'faker'
+# cells
+gem 'cells'
+# carrierwave, rmagick, mini_magick, fog
+gem 'carrierwave'
+gem 'rmagick'
+gem 'mini_magick'
+gem 'fog'
+
+# ckeditor
+gem 'ckeditor'
+
+# amazon-ecs
+gem 'amazon-ecs'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
