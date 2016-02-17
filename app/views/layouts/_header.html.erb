@@ -9,13 +9,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1 class="logo">
+                    <div class="logo">
                         <%= link_to "Let's use", root_path, class: "navbar-brand" %>
-                    </h1>
+                    </div>
                 </div>
                 
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav nav-pills navbar-nav navbar-right">
                         <% unless logged_in? %>
                             <li><%= link_to "新規登録", signup_path %></li>
                             <li><%= link_to "ログイン", login_path %></li>

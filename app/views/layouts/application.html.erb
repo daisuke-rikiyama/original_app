@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <% if content_for?(:head) %>
-    <%= yield :head %>
-  <% else %>
-    <title>Let's use!!</title>
-  <% end %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-</head>
-<body>
-
-<%= render partial: "layouts/header" %>
-<% if notice %>
-  <div class="alert alert-info">
-    <%= notice %>
-  </div>
-<% end %>
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>">
-    <%= message %>
-  </div>
-<% end %>
-<%= yield %>
-<%= render partial: "layouts/footer" %>
-
-</body>
+  <head>
+    <% if content_for?(:head) %>
+      <%= yield :head %>
+    <% else %>
+      <title>Let's use!!</title>
+    <% end %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+  
+  <%= render partial: "layouts/header" %>
+    <% if notice %>
+      <div class="alert alert-info", align="center">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>", align="center">
+        <%= message %>
+      </div>
+    <% end %>
+  <%= yield %>
+  <%= render partial: "layouts/footer" %>
+  
+  </body>
 </html>
