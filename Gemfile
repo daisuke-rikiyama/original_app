@@ -34,6 +34,8 @@ gem 'annotate'
 gem 'faker'
 # cells
 gem 'cells'
+gem 'cells-erb'
+gem 'erbse'
 # carrierwave, rmagick, mini_magick, fog
 gem 'carrierwave'
 gem 'rmagick'
