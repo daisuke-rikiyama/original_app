@@ -29,5 +29,8 @@ module OriginalApp
       g.helper false
       g.test_framework false
     end
+    # whitelist
+    # asset pipeline
+    config.cells.with_assets = ["items_cell"]
   end
 end

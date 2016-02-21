@@ -1,14 +1,53 @@
 class ItemsCell < Cell::ViewModel
   include ActionView::Helpers::FormHelper
-  include ::Cell::Erb
+  include SessionsHelper
+  include UsersHelper
+  include Rails.application.routes.url_helpers
   
   def show(args)
     @items = args[:items]
     render
   end
   
-  def welcome
-    @items = Item.all.order("updated_at DESC").limit(30)
+  def list(args)
+    @items = args[:items]    
+    render
+  end
+  
+  def action(args)
+    @item = args[:item]
+    render
+  end
+  
+  def want(args)
+    @item = args[:item]
+    render
+  end
+  
+  def unwant(args)
+    @item = args[:item]
+    render
+  end
+  
+  def have(args)
+    @item = args[:item]
+    render
+  end
+  
+  def unhave(args)
+    @item = args[:item]
+    render
+  end
+  
+  def action(args)
+    @item = args[:item]
+    render
+  end
+  
+  def detail(args)
+    @item = args[:item]
+    @want_users = @item.want_users
+    @have_users = @item.have_users
     render
   end
 

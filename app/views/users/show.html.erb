@@ -1,3 +1,7 @@
-<div class="test" align="center">
-    <h1>ユーザーページ</h1>
-</div>
+<% content_for :head do %>
+  <title><%= @user.name %> - Let's use</title>
+  <meta name="description" content="<%= @user.name %>のモノページ。
+    <%= @user.name %>の欲しいモノや持っているモノの一覧を表示しています。">
+<% end %>
+
+<%= cell(:users).(:show , user: @user) %>
