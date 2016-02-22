@@ -1,9 +1,15 @@
 class MessageBoardsCell < Cell::ViewModel
+  include ActionView::Helpers::FormHelper
   include SessionsHelper
   include UsersHelper
-  include Rails.application.routes.url_helpers
+  include ActionView::Helpers::UrlHelper
   
   def show
+    render
+  end
+  
+  def list(args)
+    @message_boards = args[:message_boards]
     render
   end
 

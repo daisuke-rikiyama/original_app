@@ -1,7 +1,8 @@
 class UsersCell < Cell::ViewModel
+  include ActionView::Helpers::FormHelper
   include SessionsHelper
   include UsersHelper
-  include Rails.application.routes.url_helpers
+  include ActionView::Helpers::UrlHelper
   
   def show(args)
     @user = args[:user]

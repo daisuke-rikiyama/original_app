@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @message_boards = @item.message_boards.order(updated_at: :desc)
     @message_board = current_user.message_boards.build
   end
 

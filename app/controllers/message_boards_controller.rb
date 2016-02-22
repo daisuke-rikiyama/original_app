@@ -12,8 +12,11 @@ class MessageBoardsController < ApplicationController
         end
     end
     
+    def show
+    end
+    
     private
     def message_board_params
-        params.require(:message_board).permit(:title, :item_id)
+        params.require(:message_board).permit(:title , :item_id)
     end
 end
