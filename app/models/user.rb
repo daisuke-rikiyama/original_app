@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :want_items , through: :wants , source: :item
   has_many :haves , class_name: "Have" , foreign_key: "user_id", dependent: :destroy
   has_many :have_items , through: :haves , source: :item
-  has_many :messageboards
+  has_many :message_boards
   
   def want(item)
     wants.find_or_create_by(item_id: item.id)
