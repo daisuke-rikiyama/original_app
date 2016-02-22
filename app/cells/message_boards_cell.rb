@@ -1,10 +1,9 @@
-class RankingCell < Cell::ViewModel
+class MessageBoardsCell < Cell::ViewModel
   include SessionsHelper
   include UsersHelper
   include Rails.application.routes.url_helpers
   
-  def show(args)
-    @items = args[:items]
+  def show
     render
   end
 

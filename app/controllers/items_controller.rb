@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @message_board = current_user.message_boards.build
   end
 
   private
