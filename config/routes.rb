@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get    'ranking/have', to: 'ranking#have', as: 'ranking_have'
   get    'ranking/want', to: 'ranking#want', as: 'ranking_want'
+  get    'message_boards', to: 'message_boards#index' , as: 'general_board'
   
-  resources :users
+  resources :users do
+    get 'message_boards', to: 'users#message_boards', as: 'message_boards'
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :items, only: [:new, :show]
   resources :ownerships, only: [:create, :destroy]

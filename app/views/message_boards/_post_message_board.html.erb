@@ -8,9 +8,11 @@
           <p><span class="title">Title</span></p>
           <%= form_for(@message_board) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
-            <div class="form-group">
-              <%= f.hidden_field :item_id, value: @item.id %>
-            </div>
+            <% if @item %>
+              <div class="form-group">
+                <%= f.hidden_field :item_id, value: @item.id %>
+              </div>
+            <% end %>
             <div class="form-group">
               <%= f.text_field :title, class: "form-control", placeholder: "input title" %>
             </div>
