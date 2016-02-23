@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     def create
         @message = current_user.messages.build(message_params)
         
-        if @massage.save
+        if @message.save
             flash[:success] = "Message created!"
             redirect_to :back
         else
