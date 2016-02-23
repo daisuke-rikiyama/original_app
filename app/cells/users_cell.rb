@@ -1,8 +1,4 @@
-class UsersCell < Cell::ViewModel
-  include ActionView::Helpers::FormHelper
-  include SessionsHelper
-  include UsersHelper
-  include ActionView::Helpers::UrlHelper
+class UsersCell < ApplicationCell
   
   def show(args)
     @user = args[:user]

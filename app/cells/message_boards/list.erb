@@ -1,23 +1,20 @@
-<div class="row message_board_list">
-    <div class="list-top">
-        <h2>掲示板一覧</h2>
-    </div>
-    <ul class="message_boards", style="list-style:none;">
-        <% @message_boards.each do |message_board| %>
-            <li id="message_board-<%= message_board.id %>">
-                <div class="col-md-6 board-title">
-                    <%= link_to message_board.title, message_board %>
-                </div>
-                <div class="col-md-2 post-user">
-                    <%= link_to message_board.user.name, message_board.user, class: "btn btn-sm btn-primary" %>
-                </div>
-                <div class="col-md-2 favorite">
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            掲示板一覧
+        </div>
+        <div class="panel-body">
+            このページの商品に関する掲示板
+        </div>
+        <ul class="list-group", style="height: 200px; overflow:auto">
+            <% @message_boards.each do |message_board| %>
+                <li class="list-group-item">
+                    <span class="label label-info"><%= link_to message_board.title, message_board %></span>
+                　　<%= link_to message_board.user.name, message_board.user, class: "btn btn-sm btn-primary" %>
                     <%= link_to "favorite", '#', class: "btn btn-sm btn-warning" %> 
-                </div>
-                <div class="col-md-2 delete">
                     <%= link_to "delete", '#', class: "btn btn-sm btn-danger" %>
-                </div>
-            </li>
-        <% end %>     
-    </ul>
+                </li>
+            <% end %>     
+        </ul>
+    </div>
 </div>

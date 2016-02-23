@@ -1,8 +1,4 @@
-class MessageBoardsCell < Cell::ViewModel
-  include ActionView::Helpers::FormHelper
-  include SessionsHelper
-  include UsersHelper
-  include ActionView::Helpers::UrlHelper
+class MessageBoardsCell < ApplicationCell
   
   def show
     render

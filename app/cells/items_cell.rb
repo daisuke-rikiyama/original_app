@@ -1,8 +1,4 @@
-class ItemsCell < Cell::ViewModel
-  include ActionView::Helpers::FormHelper
-  include SessionsHelper
-  include UsersHelper
-  include ActionView::Helpers::UrlHelper
+class ItemsCell < ApplicationCell
   
   def show(args)
     @items = args[:items]
