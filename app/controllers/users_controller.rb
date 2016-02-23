@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   def show
   end
   
+  def message_boards
+    @message_boards = current_user.message_boards.order(updated_at: :desc)
+  end
+  
   private
   def set_user
     @user = User.find(params[:id])

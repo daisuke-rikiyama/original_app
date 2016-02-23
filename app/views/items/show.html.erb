@@ -6,3 +6,7 @@
 <% end %>
 
 <%= cell(:items).(:detail , item: @item) %>
+
+<%= cell(:message_boards).(:list , message_boards: @message_boards) %>
+
+<%= render 'message_boards/post_message_board', item: @item %>

@@ -5,3 +5,5 @@
 <% end %>
 
 <%= cell(:users).(:show , user: @user) %>
+
+<%= link_to "MessageBoard", user_message_boards_path(user_id: @user.id) %>

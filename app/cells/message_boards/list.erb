@@ -1,0 +1,20 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            掲示板一覧
+        </div>
+        <div class="panel-body">
+            タイトル、投稿者、お気に入りボタン、削除ボタンを表示します。
+        </div>
+        <ul class="list-group", style="height: 200px; overflow:auto">
+            <% @message_boards.each do |message_board| %>
+                <li class="list-group-item">
+                    <span class="label label-info"><%= link_to message_board.title, message_board %></span>
+                　　<%= link_to message_board.user.name, message_board.user, class: "btn btn-sm btn-primary" %>
+                    <%= link_to "favorite", '#', class: "btn btn-sm btn-warning" %> 
+                    <%= link_to "delete", '#', class: "btn btn-sm btn-danger" %>
+                </li>
+            <% end %>     
+        </ul>
+    </div>
+</div>

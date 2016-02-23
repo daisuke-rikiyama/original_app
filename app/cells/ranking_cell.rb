@@ -1,6 +1,4 @@
-class RankingCell < Cell::ViewModel
-  include SessionsHelper
-  include UsersHelper
+class RankingCell < ApplicationCell
   
   def show(args)
     @items = args[:items]
