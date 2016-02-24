@@ -32,5 +32,6 @@ module OriginalApp
     # whitelist
     # asset pipeline
     config.cells.with_assets = ["items_cell"]
+    
   end
 end

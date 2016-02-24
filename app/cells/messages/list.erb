@@ -6,27 +6,29 @@
         <div class="panel-body">
             投稿者、内容、編集ボタン、削除ボタンを表示します。
         </div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>投稿者</th>
-                    <th>内容</th>
-                    <th>編集ボタン</th>
-                    <th>削除ボタン</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @messages.each do |message| %>
-                  <tr>
-                      <th><%= message.id %></th>
-                      <th><%= message.user.name %></th>
-                      <th><%= message.content %></th>
-                      <th><%= link_to "edit", '#', class: "btn btn-sm btn-warning" %></th>
-                      <th><%= link_to "delete", '#', class: "btn btn-sm btn-danger" %></th>
-                  </tr>
-                <% end %>
-            </tbody>
-        </table>
+        <div class="table-wrap">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>投稿者</th>
+                        <th>内容</th>
+                        <th>編集ボタン</th>
+                        <th>削除ボタン</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @messages.each do |message| %>
+                      <tr>
+                          <td><%= message.id %></td>
+                          <td><%= message.user.name %></td>
+                          <td><%= message.content %></td>
+                          <td><%= link_to "edit", '#', class: "btn btn-sm btn-warning" %></td>
+                          <td><%= link_to "delete", '#', class: "btn btn-sm btn-danger" %></td>
+                      </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
