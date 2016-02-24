@@ -24,6 +24,14 @@ class MessageBoardsController < ApplicationController
         @messages = @message_board.messages.order(updated_at: :asc)
     end
     
+    def destroy
+        @message_board = current_user.message_boards.find_by(id: params[:id])
+        return redirect_to :back if @message_board.nil?
+        @message_board.destroy
+        flash[:success] = "MessageBoard deleted"
+        redirect_to :back
+    end
+    
     private
     def general_board_params
         params.require(:message_board).permit(:title)

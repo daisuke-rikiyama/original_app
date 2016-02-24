@@ -24,7 +24,9 @@
                           <td><%= message.user.name %></td>
                           <td><%= message.content %></td>
                           <td><%= link_to "edit", '#', class: "btn btn-sm btn-warning" %></td>
-                          <td><%= link_to "delete", '#', class: "btn btn-sm btn-danger" %></td>
+                          <% if current_user == message.user %>
+                              <td><%= link_to "delete", message_board_message_path(message_board_id: message.message_board.id, id: message.id), method: :delete, data: { confirm: "You sure?" }, class: "btn btn-sm btn-danger" %></td>
+                          <% end %>
                       </tr>
                     <% end %>
                 </tbody>

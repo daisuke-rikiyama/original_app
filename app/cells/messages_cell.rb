@@ -1,4 +1,4 @@
-class MessagesCell < Cell::ViewModel
+class MessagesCell < ApplicationCell
   def show
     render
   end
