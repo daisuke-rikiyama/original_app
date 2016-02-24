@@ -2,4 +2,4 @@
 
 <%= cell(:message_boards).(:list , message_boards: @message_boards) %>
 
-<%= render 'post_message_board' %>
+<%= render 'post_message_board', { message_board: @message_board, item: @item } %>

@@ -19,6 +19,9 @@ class MessageBoardsController < ApplicationController
     end
     
     def show
+        @message_board = MessageBoard.find(params[:id])
+        @message = current_user.messages.build
+        @messages = @message_board.messages.order(updated_at: :asc)
     end
     
     private

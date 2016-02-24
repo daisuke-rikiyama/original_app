@@ -1,1 +1,5 @@
-<h1>成功</h1>
+<h1 align="center"><%= @message_board.title %></h1>
+
+<%= cell(:messages).(:list , messages: @messages) %>
+
+<%= render 'messages/post_message' , { message_board: @message_board , message: @message } %>
