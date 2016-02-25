@@ -17,9 +17,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :items, only: [:new, :show]
   resources :ownerships, only: [:create, :destroy]
-  resources :message_boards, only: [:create, :destroy]
-  resources :message_boards, only: [:show]  do
-    resources :messages
+  resources :message_boards, only: [:create, :show, :destroy] do
+    resources :messages, only: [:create, :edit, :update, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
